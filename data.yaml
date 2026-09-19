@@ -1,0 +1,8 @@
+# Dataset configuration for WiderFace YOLO training
+path: ./train
+train: images/train
+val: images/val
+
+# Classes
+nc: 1
+names: ['face']

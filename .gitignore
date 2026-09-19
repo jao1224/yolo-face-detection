@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and checkpoints
+.pytest_cache/
+.ipynb_checkpoints/
+*.pt.cache
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Heavy datasets & temporary video inputs
+train/images/
+train/labels/
+*.mp4
+*.avi
+*.mkv
+
+# Training logs
+*.log

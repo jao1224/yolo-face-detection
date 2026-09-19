@@ -1,0 +1,7 @@
+﻿Métrica,Treino 1 (Baseline),Treino 2 (Otimizado),Diferença Absoluta,Evolução Relativa,Impacto Prático
+mAP@0.5 (Melhor),52.65% (Época 787),65.61% (Época 820),+12.96%,+24.62%,Aumento drástico no reconhecimento geral de faces no dataset
+mAP@0.5:0.95 (Melhor),26.66% (Época 702),34.81% (Época 622),+8.16%,+30.59%,Caixas delimitadoras muito mais justas e precisas na face
+Recall / Sensibilidade (Melhor),47.44% (Época 799),58.84% (Época 921),+11.39%,+24.01%,"Detecta faces menores, distantes, de perfil e com oclusão"
+Precisão / Precision (Melhor),77.82% (Época 768),84.06% (Época 793),+6.24%,+8.01%,Redução de detecções falsas (menos ruído no fundo)
+F1-Score (Harmônico),58.81% (Época 798),69.10% (Época 916),+10.29%,+17.49%,Melhoria global do trade-off entre precisão e cobertura
+Total de Épocas,802 épocas,922 épocas,+120 épocas,+15.0%,Treinamento contínuo sem overfitting destrutivo

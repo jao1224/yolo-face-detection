@@ -1,0 +1,66 @@
+{
+    "treino_1_baseline": {
+        "name": "Treinamento 1 (Baseline - train-9)",
+        "total_epochs": 802,
+        "best": {
+            "mAP50": 0.52653,
+            "mAP50_epoch": 787,
+            "mAP50_95": 0.26658,
+            "mAP50_95_epoch": 702,
+            "Precision": 0.7782,
+            "Precision_epoch": 768,
+            "Recall": 0.47443,
+            "Recall_epoch": 799,
+            "F1_Score": 0.5881064276677183,
+            "F1_Score_epoch": 798
+        },
+        "final": {
+            "mAP50": 0.52621,
+            "mAP50_95": 0.26627,
+            "Precision": 0.77269,
+            "Recall": 0.47423,
+            "F1_Score": 0.5877406388541365,
+            "train_box_loss": 2.08233,
+            "train_cls_loss": 0.99154,
+            "val_box_loss": 2.04758,
+            "val_cls_loss": 0.95783
+        }
+    },
+    "treino_2_otimizado": {
+        "name": "Treinamento 2 (Otimizado - train-14)",
+        "total_epochs": 922,
+        "best": {
+            "mAP50": 0.65615,
+            "mAP50_epoch": 820,
+            "mAP50_95": 0.34813,
+            "mAP50_95_epoch": 622,
+            "Precision": 0.84055,
+            "Precision_epoch": 793,
+            "Recall": 0.58835,
+            "Recall_epoch": 921,
+            "F1_Score": 0.6909587842985934,
+            "F1_Score_epoch": 916
+        },
+        "final": {
+            "mAP50": 0.65484,
+            "mAP50_95": 0.34086,
+            "Precision": 0.83626,
+            "Recall": 0.58835,
+            "F1_Score": 0.6907344059075818,
+            "train_box_loss": 2.30244,
+            "train_cls_loss": 1.16028,
+            "val_box_loss": 2.437,
+            "val_cls_loss": 1.25465
+        }
+    },
+    "resumo_ganhos": {
+        "ganho_absoluto_map50": 12.961999999999996,
+        "ganho_relativo_map50": 24.617780563310724,
+        "ganho_absoluto_recall": 11.392000000000003,
+        "ganho_relativo_recall": 24.011972261450587,
+        "ganho_absoluto_precision": 6.235000000000001,
+        "ganho_relativo_precision": 8.012079157029044,
+        "ganho_absoluto_map95": 8.155000000000001,
+        "ganho_relativo_map95": 30.59119213744468
+    }
+}
