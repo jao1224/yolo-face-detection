@@ -70,7 +70,7 @@ def main():
 
         # Exibir resultado
         cv2.imshow("YOLO Real-Time Face Detection (Q to exit)", frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(106) & 0xFF == ord('q'):
             break
 
     webcam.release()
