@@ -1,7 +1,14 @@
+# Core YOLO Framework (supports YOLO26, YOLOv8, etc.)
 ultralytics>=8.0.0
+
+# Computer Vision & Image Processing
 opencv-python>=4.8.0
-matplotlib>=3.7.0
+pillow>=9.5.0
+
+# Data Analysis & Metrics
 pandas>=2.0.0
 numpy>=1.24.0
+matplotlib>=3.7.0
+
+# Dataset Hub (WiderFace)
 datasets>=2.14.0
-pillow>=9.5.0
