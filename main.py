@@ -9,6 +9,10 @@ import cv2
 from ultralytics import YOLO
 
 def find_model_path():
+    env_model = os.getenv('MODEL_PATH')
+    if env_model and os.path.exists(env_model):
+        return env_model
+
     base_dir = os.path.dirname(os.path.abspath(__file__))
     candidates = [
         os.path.join(base_dir, 'models', 'best.pt'),
@@ -24,11 +28,15 @@ def main():
     print(f"--> Carregando modelo YOLO de: {modelo_path}")
     model = YOLO(modelo_path)
 
-    # Inicializar webcam (índice 0 por padrão)
-    print("--> Abrindo webcam... (Pressione 'q' para sair)")
-    webcam = cv2.VideoCapture(0)
+    # Parâmetros configuráveis via variáveis de ambiente (.env) ou padrão
+    webcam_idx = int(os.getenv('WEBCAM_INDEX', '0'))
+    conf_thresh = float(os.getenv('CONFIDENCE_THRESHOLD', '0.25'))
+
+    # Inicializar webcam
+    print(f"--> Abrindo webcam (índice {webcam_idx})... (Pressione 'q' para sair)")
+    webcam = cv2.VideoCapture(webcam_idx)
     if not webcam.isOpened():
-        print("Erro: Não foi possível acessar a webcam.")
+        print(f"Erro: Não foi possível acessar a webcam no índice {webcam_idx}.")
         return
 
     prev_time = time.time()
@@ -44,8 +52,8 @@ def main():
         fps = 1.0 / (curr_time - prev_time) if (curr_time - prev_time) > 0 else 0
         prev_time = curr_time
 
-        # Executar inferência (limiar de confiança ajustável)
-        results = model(frame, conf=0.25, verbose=False)
+        # Executar inferência
+        results = model(frame, conf=conf_thresh, verbose=False)
 
         num_faces = 0
         for result in results:
@@ -70,7 +78,7 @@ def main():
 
         # Exibir resultado
         cv2.imshow("YOLO Real-Time Face Detection (Q to exit)", frame)
-        if cv2.waitKey(106) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     webcam.release()
